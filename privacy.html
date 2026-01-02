@@ -11,34 +11,19 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         .privacy-page {
-            background: white;
+            background: var(--background);
             min-height: 100vh;
         }
         
         .privacy-nav {
-            background: var(--secondary);
+            background: white;
             padding: 1.5rem 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid var(--border);
         }
         
         .privacy-nav .nav-container {
             padding: 0 2rem;
-        }
-        
-        .privacy-nav .logo {
-            color: white;
-        }
-        
-        .privacy-nav .nav-links a {
-            color: rgba(255, 255, 255, 0.9);
-        }
-        
-        .privacy-nav .nav-links a:hover {
-            color: var(--accent);
-        }
-        
-        .privacy-nav .nav-links a::after {
-            background: var(--accent);
         }
         
         .privacy-content {
@@ -63,6 +48,7 @@
         .privacy-updated {
             color: var(--text-light);
             font-size: 0.875rem;
+            font-weight: 600;
         }
         
         .privacy-section {
@@ -105,7 +91,7 @@
             gap: 0.5rem;
             color: var(--primary);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 2rem;
             transition: var(--transition);
         }
@@ -114,14 +100,30 @@
             color: var(--primary-dark);
             transform: translateX(-4px);
         }
+        
+        .privacy-section a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+        }
+        
+        .privacy-section a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body class="privacy-page">
-    <nav class="privacy-nav">
+    <!-- WCAG: Skip Navigation Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <nav class="privacy-nav" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <div class="logo">
-                <span class="logo-icon">🐾</span>
-                <span class="logo-text">ElioPet Scanner</span>
+                <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.75rem;">
+                    <span class="logo-icon" aria-hidden="true">🐾</span>
+                    <span class="logo-text">ElioPet Scanner</span>
+                </a>
             </div>
             <div class="nav-links">
                 <a href="index.html">Home</a>
@@ -131,12 +133,12 @@
         </div>
     </nav>
 
-    <div class="privacy-content">
+    <main id="main-content" class="privacy-content">
         <a href="index.html" class="back-link">← Back to Home</a>
         
         <div class="privacy-header">
             <h1>Privacy Policy</h1>
-            <p class="privacy-updated">Last Updated: December 31, 2025</p>
+            <p class="privacy-updated">Last Updated: January 1, 2026</p>
         </div>
 
         <div class="privacy-section">
@@ -258,8 +260,8 @@
                 If you have questions, concerns, or requests regarding this Privacy Policy or how we handle your data, please contact us:
             </p>
             <ul>
-                <li><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#0474766d7265677d4461686d6b7461702a676b69" style="color: var(--primary); text-decoration: none;"><span class="__cf_email__" data-cfemail="bdcdcfd4cbdcdec4fdd8d1d4d2cdd8c993ded2d0">[email&#160;protected]</span></a></li>
-                <li><strong>General Inquiries:</strong> <a href="/cdn-cgi/l/email-protection#640c0108080b2401080d0b1401104a070b09" style="color: var(--primary); text-decoration: none;"><span class="__cf_email__" data-cfemail="a9c1ccc5c5c6e9ccc5c0c6d9ccdd87cac6c4">[email&#160;protected]</span></a></li>
+                <li><strong>Email:</strong> <a href="mailto:privacy@eliopet.com">privacy@eliopet.com</a></li>
+                <li><strong>General Inquiries:</strong> <a href="mailto:hello@eliopet.com">hello@eliopet.com</a></li>
             </ul>
             <p>
                 We aim to respond to all privacy-related inquiries within 7 business days.
@@ -279,12 +281,23 @@
         </div>
 
         <a href="index.html" class="back-link" style="margin-top: 3rem;">← Back to Home</a>
-    </div>
+    </main>
 
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <p class="footer-copy">© 2025 ElioPet Scanner. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="privacy.html">Privacy Policy</a>
-                    <span class="separator"
+                <nav class="footer-links" aria-label="Footer navigation">
+                    <a href="privacy.html" aria-current="page">Privacy Policy</a>
+                    <span class="separator" aria-hidden="true">·</span>
+                    <a href="accessibility.html">Accessibility</a>
+                    <span class="separator" aria-hidden="true">·</span>
+                    <a href="index.html#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

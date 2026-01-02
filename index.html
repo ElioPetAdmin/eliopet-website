@@ -11,19 +11,22 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- WCAG: Skip Navigation Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Hero Section -->
-    <header class="hero" id="home">
-        <nav class="nav-container">
+    <header class="hero" id="home" role="banner">
+        <nav class="nav-container" role="navigation" aria-label="Main navigation">
             <div class="logo">
-                <span class="logo-icon">🐾</span>
+                <span class="logo-icon" aria-hidden="true">🐾</span>
                 <span class="logo-text">ElioPet Scanner</span>
             </div>
-            <div class="nav-separator"></div>
+            <div class="nav-separator" aria-hidden="true"></div>
             <div class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#screenshots">App</a>
-                <a href="#access">Beta</a>
-                <a href="#contact">Contact</a>
+                <a href="#features" aria-label="View app features">Features</a>
+                <a href="#screenshots" aria-label="View app screenshots">App</a>
+                <a href="#access" aria-label="Join beta program">Beta</a>
+                <a href="#contact" aria-label="Contact us">Contact</a>
             </div>
         </nav>
 
@@ -38,16 +41,21 @@
                 understand product quality, and make safer food choices — directly from a barcode scan.
             </p>
             <div class="hero-cta fade-in-up delay-2">
-                <a href="#access" class="btn btn-primary">
-                    <span>📱 Join Beta on Android</span>
+                <a href="#access" 
+                   class="btn btn-primary"
+                   aria-label="Join Android beta program">
+                    <span aria-hidden="true">📱</span>
+                    <span>Join Beta on Android</span>
                 </a>
-                <a href="#features" class="btn btn-secondary">
+                <a href="#features" 
+                   class="btn btn-secondary"
+                   aria-label="Learn more about ElioPet Scanner features">
                     <span>Learn More</span>
                 </a>
             </div>
         </div>
 
-        <div class="hero-visual fade-in delay-3">
+        <div class="hero-visual fade-in delay-3" aria-hidden="true">
             <div class="phone-mockup">
                 <div class="phone-frame">
                     <div class="phone-screen">
@@ -61,208 +69,253 @@
         </div>
     </header>
 
-    <!-- Value Proposition Section -->
-    <section class="value-section">
-        <div class="container">
-            <h2 class="section-title">A Smarter Way to Choose Pet Food</h2>
-            
-            <div class="value-grid">
-                <div class="value-card">
-                    <div class="value-icon-wrap">
-                        <div class="value-icon">🔍</div>
-                    </div>
-                    <h3>Scan Products Instantly</h3>
-                    <p>Scan pet food and treats using your phone's camera to view ingredient breakdowns and warnings in seconds.</p>
-                </div>
+    <!-- WCAG: Main Content -->
+    <main id="main-content">
+        
+        <!-- Value Proposition Section -->
+        <section class="value-section" aria-labelledby="value-heading">
+            <div class="container">
+                <h2 id="value-heading" class="section-title">A Smarter Way to Choose Pet Food</h2>
+                
+                <div class="value-grid">
+                    <article class="value-card">
+                        <div class="value-icon-wrap">
+                            <div class="value-icon" aria-hidden="true">🔍</div>
+                        </div>
+                        <h3>Scan Products Instantly</h3>
+                        <p>Scan pet food and treats using your phone's camera to view ingredient breakdowns and warnings in seconds.</p>
+                    </article>
 
-                <div class="value-card">
-                    <div class="value-icon-wrap">
-                        <div class="value-icon">⚠️</div>
-                    </div>
-                    <h3>Ingredient Awareness</h3>
-                    <p>See potential red flags, additives, and ingredients that may be controversial or unsuitable for certain pets.</p>
-                </div>
+                    <article class="value-card">
+                        <div class="value-icon-wrap">
+                            <div class="value-icon" aria-hidden="true">⚠️</div>
+                        </div>
+                        <h3>Ingredient Awareness</h3>
+                        <p>See potential red flags, additives, and ingredients that may be controversial or unsuitable for certain pets.</p>
+                    </article>
 
-                <div class="value-card">
-                    <div class="value-icon-wrap">
-                        <div class="value-icon">🐶</div>
-                    </div>
-                    <h3>Personalized Insights</h3>
-                    <p>Customize preferences based on your pet's sensitivities, age, or dietary concerns for more relevant results.</p>
+                    <article class="value-card">
+                        <div class="value-icon-wrap">
+                            <div class="value-icon" aria-hidden="true">🐶</div>
+                        </div>
+                        <h3>Personalized Insights</h3>
+                        <p>Customize preferences based on your pet's sensitivities, age, or dietary concerns for more relevant results.</p>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Screenshots Section -->
-    <section class="screenshots-section" id="screenshots">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Inside the App</h2>
+        <!-- Screenshots Section -->
+        <section class="screenshots-section" id="screenshots" aria-labelledby="screenshots-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="screenshots-heading" class="section-title">Inside the App</h2>
+                    <p class="section-subtitle">
+                        ElioPet Scanner is designed to be fast, simple, and easy to use — 
+                        whether you're at home or standing in the pet store aisle.
+                    </p>
+                </div>
+
+                <div class="screenshots-grid">
+                    <!-- Home Page -->
+                    <div class="screenshot-card">
+                        <img src="images/screenshots/home.png" 
+                             alt="ElioPet Scanner home screen displaying a large Scan Product button in orange, three filter tabs for Severity Score, Confidence Level, and Last Verified, and a What it does section listing the app's main features: scanning barcodes, reviewing ingredients, and summarizing risk with a simple severity score" 
+                             class="screenshot-image"
+                             loading="lazy">
+                    </div>
+
+                    <!-- Scan Page -->
+                    <div class="screenshot-card">
+                        <img src="images/screenshots/scan.png" 
+                             alt="Scan screen showing a camera viewfinder with an orange scanning frame in the center for capturing product barcodes, along with helper text at the bottom saying Tip: Scan a real UPC/EAN barcode. If it's not in your database yet, you'll see Product not found" 
+                             class="screenshot-image"
+                             loading="lazy">
+                    </div>
+
+                    <!-- Search Page -->
+                    <div class="screenshot-card">
+                        <img src="images/screenshots/search.png" 
+                             alt="Search screen with a barcode text input field labeled Type or paste barcode, a large black Search button, and a secondary Go to Scan button below it for alternative barcode entry methods" 
+                             class="screenshot-image"
+                             loading="lazy">
+                    </div>
+
+                    <!-- Profile Page -->
+                    <div class="screenshot-card">
+                        <img src="images/screenshots/profile.png" 
+                             alt="Profile screen displaying a Guest Mode banner prompting Sign in to sync pets, followed by a pet card for Max the dog showing 2 sensitivities to Chicken and Beef with an Edit Sensitivities button, plus an orange Add Pet button and a Clear Cache option showing 1 product cached" 
+                             class="screenshot-image"
+                             loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section" id="features" aria-labelledby="features-heading">
+            <div class="container">
+                <h2 id="features-heading" class="section-title">Key Features</h2>
+
+                <div class="features-list">
+                    <article class="feature-item">
+                        <div class="feature-content">
+                            <h3>Barcode Scanning</h3>
+                            <p>Scan pet food and treat barcodes using your phone. Fast detection with minimal taps.</p>
+                        </div>
+                    </article>
+
+                    <article class="feature-item">
+                        <div class="feature-content">
+                            <h3>Ingredient Analysis</h3>
+                            <p>Highlights ingredients commonly questioned by pet owners. Designed to support informed decisions, not medical advice.</p>
+                        </div>
+                    </article>
+
+                    <article class="feature-item">
+                        <div class="feature-content">
+                            <h3>Local Caching</h3>
+                            <p>Recently scanned products load quickly. Useful in stores with poor signal.</p>
+                        </div>
+                    </article>
+
+                    <article class="feature-item">
+                        <div class="feature-content">
+                            <h3>Pet Profiles</h3>
+                            <p>Track preferences or sensitivities per pet. Results adjust to what matters to your pet.</p>
+                        </div>
+                    </article>
+
+                    <article class="feature-item">
+                        <div class="feature-content">
+                            <h3>Clear Scoring</h3>
+                            <p>Simple indicators help you compare products. Transparent logic — no black-box ratings.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Early Access Section -->
+        <section class="access-section" id="access" aria-labelledby="access-heading">
+            <div class="container">
+                <div class="access-card">
+                    <h2 id="access-heading">Get Early Access</h2>
+                    <p class="access-description">
+                        ElioPet Scanner is currently in active development. 
+                        Early testers help shape features, improve accuracy, and guide future updates.
+                    </p>
+                    
+                    <a href="/cdn-cgi/l/email-protection#0a626f6666654a6f6663657a6f7e2469656735797f68606f697e374b646e7865636e2f383a486f7e6b2f383a43647e6f786f797e" class="btn btn-primary btn-large" aria-label="Email to join Android beta program">
+                        <span aria-hidden="true">📱</span>
+                        <span>Join Beta on Android</span>
+                    </a>
+                    
+                    <p class="access-note">No spam. No ads. Just updates about the app.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust & Transparency Section -->
+        <section class="trust-section" aria-labelledby="trust-heading">
+            <div class="container">
+                <div class="trust-card">
+                    <div class="trust-icon" aria-hidden="true">🛡️</div>
+                    <h3 id="trust-heading">Trust & Transparency</h3>
+                    <p>
+                        ElioPet Scanner is an informational tool designed to support pet owners in making informed choices. 
+                        It does not replace veterinary advice, diagnosis, or treatment.
+                    </p>
+                    <p>
+                        Ingredient information is based on publicly available data and product labeling. 
+                        Always consult a qualified veterinarian regarding your pet's specific health needs.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact" aria-labelledby="contact-heading">
+            <div class="container">
+                <h2 id="contact-heading" class="section-title">Get in Touch</h2>
                 <p class="section-subtitle">
-                    ElioPet Scanner is designed to be fast, simple, and easy to use — 
-                    whether you're at home or standing in the pet store aisle.
+                    Questions, feedback, or interested in testing ElioPet Scanner?<br>
+                    I'd love to hear from you.
                 </p>
-            </div>
 
-            <div class="screenshots-grid">
-                <!-- Home Page -->
-                <div class="screenshot-card">
-                    <img src="images/screenshots/home.png" 
-                         alt="Home page showing quick access to features" 
-                         class="screenshot-image">
-                </div>
-
-                <!-- Scan Page -->
-                <div class="screenshot-card">
-                    <img src="images/screenshots/scan.png" 
-                         alt="Scan page with barcode scanner and results" 
-                         class="screenshot-image">
-                </div>
-
-                <!-- Search Page -->
-                <div class="screenshot-card">
-                    <img src="images/screenshots/search.png" 
-                         alt="Search page to find products by name" 
-                         class="screenshot-image">
-                </div>
-
-                <!-- Profile Page -->
-                <div class="screenshot-card">
-                    <img src="images/screenshots/profile.png" 
-                         alt="Profile page with pet information and preferences" 
-                         class="screenshot-image">
-                </div>
-            </div>
-            
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features-section" id="features">
-        <div class="container">
-            <h2 class="section-title">Key Features</h2>
-
-            <div class="features-list">
-                <div class="feature-item">
-                    <div class="feature-content">
-                        <h3>Barcode Scanning</h3>
-                        <p>Scan pet food and treat barcodes using your phone. Fast detection with minimal taps.</p>
-                    </div>
-                </div>
-
-                <div class="feature-item">
-                    <div class="feature-content">
-                        <h3>Ingredient Analysis</h3>
-                        <p>Highlights ingredients commonly questioned by pet owners. Designed to support informed decisions, not medical advice.</p>
-                    </div>
-                </div>
-
-                <div class="feature-item">
-                    <div class="feature-content">
-                        <h3>Local Caching</h3>
-                        <p>Recently scanned products load quickly. Useful in stores with poor signal.</p>
-                    </div>
-                </div>
-
-                <div class="feature-item">
-                    <div class="feature-content">
-                        <h3>Pet Profiles</h3>
-                        <p>Track preferences or sensitivities per pet. Results adjust to what matters to your pet.</p>
-                    </div>
-                </div>
-
-                <div class="feature-item">
-                    <div class="feature-content">
-                        <h3>Clear Scoring</h3>
-                        <p>Simple indicators help you compare products. Transparent logic — no black-box ratings.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TestFlight / Early Access Section -->
-    <section class="access-section" id="access">
-        <div class="container">
-            <div class="access-card">
-                <h2>Get Early Access</h2>
-                <p class="access-description">
-                    ElioPet Scanner is currently in active development. 
-                    Early testers help shape features, improve accuracy, and guide future updates.
-                </p>
-                
-                <a href="/cdn-cgi/l/email-protection#5f373a3333301f3a3336302f3a2b713c3032602c2a3d353a3c2b620b3a2c2b19333638372b7a6d6f16312b3a2d3a2c2b" class="btn btn-primary btn-large">
-                    <span>📱 Join Beta on Android</span>
-                </a>
-                
-                <p class="access-note">No spam. No ads. Just updates about the app.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trust & Transparency Section -->
-    <section class="trust-section">
-        <div class="container">
-            <div class="trust-card">
-                <div class="trust-icon">🛡️</div>
-                <h3>Trust & Transparency</h3>
-                <p>
-                    ElioPet Scanner is an informational tool designed to support pet owners in making informed choices. 
-                    It does not replace veterinary advice, diagnosis, or treatment.
-                </p>
-                <p>
-                    Ingredient information is based on publicly available data and product labeling. 
-                    Always consult a qualified veterinarian regarding your pet's specific health needs.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <div class="container">
-            <h2 class="section-title">Get in Touch</h2>
-            <p class="section-subtitle">
-                Questions, feedback, or interested in testing ElioPet Scanner?<br>
-                I'd love to hear from you.
-            </p>
-
-            <form class="contact-form" id="contactForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">Name <span class="optional">(optional)</span></label>
-                        <input type="text" id="name" name="name" placeholder="Your name">
+                <form class="contact-form" 
+                      id="contactForm"
+                      aria-labelledby="contact-heading">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">
+                                Name 
+                                <span class="optional">(optional)</span>
+                            </label>
+                            <input type="text" 
+                                   id="name" 
+                                   name="name" 
+                                   placeholder="Your name"
+                                   autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">
+                                Email 
+                                <span class="required" aria-label="required">*</span>
+                            </label>
+                            <input type="email" 
+                                   id="email" 
+                                   name="email" 
+                                   placeholder="your@email.com" 
+                                   required
+                                   aria-required="true"
+                                   autocomplete="email">
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email <span class="required">*</span></label>
-                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        <label for="message">
+                            Message 
+                            <span class="required" aria-label="required">*</span>
+                        </label>
+                        <textarea id="message" 
+                                  name="message" 
+                                  rows="6" 
+                                  placeholder="Your message..." 
+                                  required
+                                  aria-required="true"></textarea>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message <span class="required">*</span></label>
-                    <textarea id="message" name="message" rows="6" placeholder="Your message..." required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">
-                    <span>Send Message</span>
-                </button>
-                <p class="form-note">Responses may take a short time during development.</p>
-            </form>
+                    <button type="submit" class="btn btn-primary">
+                        <span>Send Message</span>
+                    </button>
+                    <p class="form-note">Responses may take a short time during development.</p>
+                </form>
 
-            <div class="contact-email">
-                <p>Or email directly: <a href="/cdn-cgi/l/email-protection#98f0fdf4f4f7d8fdf4f1f7e8fdecb6fbf7f5"><span class="__cf_email__" data-cfemail="f9919c959596b99c959096899c8dd79a9694">[email&#160;protected]</span></a></p>
+                <div class="contact-email">
+                    <p>Or email directly: 
+                        <a href="/cdn-cgi/l/email-protection#b3dbd6dfdfdcf3d6dfdadcc3d6c79dd0dcde"><span class="__cf_email__" data-cfemail="83ebe6efefecc3e6efeaecf3e6f7ade0ecee">[email&#160;protected]</span></a>
+                    </p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+        
+    </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <p class="footer-copy">© 2025 ElioPet Scanner. All rights reserved.</p>
-                <div class="footer-links">
+                <nav class="footer-links" aria-label="Footer navigation">
                     <a href="privacy.html">Privacy Policy</a>
-                    <span class="separator">·</span>
+                    <span class="separator" aria-hidden="true">·</span>
+                    <a href="accessibility.html">Accessibility</a>
+                    <span class="separator" aria-hidden="true">·</span>
                     <a href="#contact">Contact</a>
-                </div>
-         
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
